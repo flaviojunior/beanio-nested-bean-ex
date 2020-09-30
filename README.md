@@ -1,2 +1,2 @@
-# beanio-nested-bean-ex
-Example project for BeanIO with nested beans.
+# beanio-rid-ex
+Example project for BeanIO with record identifier (RID).

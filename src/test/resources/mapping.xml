@@ -1,0 +1,44 @@
+<beanio xmlns="http://www.beanio.org/2012/03"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+  <stream name="personFile" format="fixedlength">
+    <record name="header" class="com.fktecno.beanio.rid.ex.Header">
+      <field name="recordType" rid="true" literal="H" />
+      <field name="date" format="MMddyyyy" length="6" />
+    </record>
+
+    <record name="juridicalPerson" class="com.fktecno.beanio.rid.ex.JuridicalPerson">
+      <field name="recordType" rid="true" literal="B" />
+      <field name="firstName" length="30" />
+      <field name="lastName" length="30" />
+      <field name="title" length="30" />
+
+      <field name="personType" rid="true" literal="J" />
+      <field name="companyName" length="15" />
+      <field name="numberOfEmployees" length="4" />
+
+      <field name="salary" length="20" />
+      <field name="hireDate" format="MMddyyyy" length="6" />
+    </record>
+
+    <record name="naturalPerson" class="com.fktecno.beanio.rid.ex.NaturalPerson">
+      <field name="recordType" rid="true" literal="B" />
+      <field name="firstName" length="30" />
+      <field name="lastName" length="30" />
+      <field name="title" length="30" />
+
+      <field name="personType" rid="true" literal="N" />
+      <field name="name" length="15" />
+      <field name="age" length="4" />
+
+      <field name="salary" length="20" />
+      <field name="hireDate" format="MMddyyyy" length="6" />
+    </record>
+
+    <record name="footer" class="com.fktecno.beanio.rid.ex.Footer">
+      <field name="recordType" rid="true" literal="F" />
+      <field name="numberOfLines" length="4" />
+    </record>
+  </stream>
+</beanio>
